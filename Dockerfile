@@ -17,6 +17,10 @@ RUN apk --update-cache add php8 php8-pcntl php8-posix php8-swoole php8-sockets p
 # https://github.com/codecasts/php-alpine/issues/21
 RUN ln -s /usr/bin/php8 /usr/bin/php
 
+# Setup document root
+RUN mkdir -p /var/www/html && \
+    chown -R nobody.nobody /var/www/html
+
 # Switch to use a non-root user from here on
 USER nobody
 

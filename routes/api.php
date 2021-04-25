@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // try to connect DB health check
-    $checkDbConnection = DB::connection()->getPdo();
-    // $users = User::all();
-
+    // $checkDbConnection = DB::connection()->getPdo();
     return ['version' => '1.0.0'];
 });
 
